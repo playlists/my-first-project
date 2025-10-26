@@ -1,0 +1,29 @@
+prompt_path = "prompt_template.txt"
+example_path = "example_article.md"
+output_path = "prompt_watch_example.txt"
+
+[[replacements]]
+start_marker = "【レビュー視点の提案】"
+end_marker = "パートB：あなたの「正直な感想」のインプット"
+pad_with_newlines = true
+[replacements.source]
+type = "heading_list"
+include_heading = true
+separator = "\n\n"
+headings = [
+  { heading = "レイモンド ウェイルの成り立ちと概要", level = 2 },
+  { heading = "ディテールを見ると、レイモンド ウェイルの“腕前”が見えてくる", level = 3 }
+]
+
+[[replacements]]
+start_marker = "Plaintext"
+end_marker = "パートC：レビュー記事の執筆"
+pad_with_newlines = true
+[replacements.source]
+type = "heading_list"
+include_heading = false
+separator = "\n\n"
+headings = [
+  { heading = "装着感と操作感への所感", level = 3, include_heading = false },
+  { heading = "価格と品質のバランスに、堀内も納得！", level = 3, include_heading = true }
+]
